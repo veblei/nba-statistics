@@ -1,8 +1,6 @@
 import re
 from urllib.parse import urljoin
 
-## -- Task 2 -- ##
-
 
 def find_urls(
     html: str,

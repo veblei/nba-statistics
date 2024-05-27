@@ -13,10 +13,6 @@ from pathlib import Path
 
 
 
-## --- Task 8, 9 and 10 --- ##
-
-
-
 try:
     import requests_cache
 except ImportError:

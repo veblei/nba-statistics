@@ -1,8 +1,6 @@
 import re
 from typing import Tuple
 
-## -- Task 3 (IN3110 optional, IN4110 required) -- ##
-
 # create array with all names of months
 month_names = [
     "January",

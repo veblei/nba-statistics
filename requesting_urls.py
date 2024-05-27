@@ -2,8 +2,6 @@ from typing import Dict, Optional
 
 import requests
 
-## -- Task 1 -- ##
-
 
 def get_html(url: str, params: Optional[Dict] = None, output: Optional[str] = None):
     """Get an HTML page and return its contents.
