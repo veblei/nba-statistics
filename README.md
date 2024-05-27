@@ -1,10 +1,8 @@
-# Functionality
+# NBA Statistics
 
 ## Run script
 
     python3 fetch_player_statistics.py
-
-# Testing
 
 ## Run all tests
 
@@ -14,7 +12,7 @@
 
     pytest -v tests/<filename>
 
-# Dependencies
+## Dependencies
 
 - Pandas
 - BeautifulSoup4
