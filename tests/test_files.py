@@ -4,15 +4,15 @@ import pytest
 
 
 @pytest.fixture
-def assignment4():
+def my_dir():
     return Path(__file__).parent.parent.resolve()
 
 
-def test_location(assignment4):
-    # check that we're in repo root/assignment4
+def test_location(my_dir):
+    # check that we're in repo root/my_dir
     assert (
-        assignment4.name == "assignment4"
-    ), "Assignment is not in the correct `assignment4` directory!"
+        my_dir.name == "nba-statistics"
+    ), "Project is not in the correct directory!"
 
 
 @pytest.mark.parametrize(
@@ -21,10 +21,8 @@ def test_location(assignment4):
         "README.md",
         "requesting_urls.py",
         "filter_urls.py",
-        "collect_dates.py",
-        "time_planner.py",
-        # "wiki_race_challenge.py",
+        "collect_dates.py"
     ],
 )
-def test_files_exist(assignment4, filename):
-    assert assignment4.joinpath(filename).exists()
+def test_files_exist(my_dir, filename):
+    assert my_dir.joinpath(filename).exists()
