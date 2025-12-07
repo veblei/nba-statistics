@@ -115,7 +115,7 @@ def plot_best(best: Dict[str, List[Dict]], stat: str) -> None:
         stat (str) : [points | assists | rebounds] which stat to plot.
             Should be a key in the player info dictionary.
     """
-    stats_dir = "NBA_player_statistics"
+    stats_dir = "results_graphs"
     # Make new directory.
     current_dir = os.getcwd()
     final_dir = os.path.join(current_dir, stats_dir)
@@ -313,15 +313,19 @@ def get_player_stats(player_url: str, team: str) -> dict:
         else:
             index = 1
 
-        if "2021" in title and team in title:
-            # load stats from columns
-            # keys should be 'points', 'assists', etc.
-            stats = {
-                "points": float(cols[ppg_index].text.strip("*\n")),
-                "assists": float(cols[apg_index].text.strip("*")),
-                "rebounds": float(cols[rpg_index].text.strip("*"))
-            }
-            break
+        try:
+            if "2021" in title and team in title:
+                # load stats from columns
+                # keys should be 'points', 'assists', etc.
+                stats = {
+                    "points": float(cols[ppg_index].text.strip("*\n")),
+                    "assists": float(cols[apg_index].text.strip("*")),
+                    "rebounds": float(cols[rpg_index].text.strip("*"))
+                }
+                break
+        except ValueError as e:
+            print(f"ValueError: {e}")
+            
 
     return stats
 
